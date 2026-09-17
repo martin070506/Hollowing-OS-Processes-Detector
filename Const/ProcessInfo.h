@@ -1,20 +1,22 @@
 #pragma once
 #include <iostream>
+#include "windows.h"
+#include <string>
 class ProcessInfo {
     private:
         int processId_;
         int parentProcessId_;
-        std::string executableName_;
-        std::string path_;
+        std::wstring executableName_;
+        std::wstring path_;
 
     public:
-        ProcessInfo(int processId, int parentProcessId,   const std::string& executableName,  const std::string& path);
-        ProcessInfo(const ProcessInfo& other)=delete;
-        ProcessInfo(ProcessInfo&& other):processId_(other.processId_),parentProcessId_(other.parentProcessId_),executableName_(std::move(other.executableName_)),path_(std::move(other.path_)){};
-        int getProcessId() ;
-        int getParentProcessId()  ;
-        const std::string& getExecutableName();
-        const std::string& getPath() ;
+        ProcessInfo()=default;
+        ProcessInfo(DWORD processId, DWORD parentProcessId,   const std::wstring& executableName,  const std::wstring& path);
+        DWORD getProcessId() ;
+        DWORD getParentProcessId()  ;
+        const std::wstring& getExecutableName();
+        const std::wstring& getPath() ;
+        void setPath(const std::wstring& path);
 
 
 };

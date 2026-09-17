@@ -20,6 +20,6 @@ class ScopedHandle {
         HANDLE GetHandle() const ;
         bool valid() const ;
         void reset();
-        explicit operator bool() const ;
+        
 
 };

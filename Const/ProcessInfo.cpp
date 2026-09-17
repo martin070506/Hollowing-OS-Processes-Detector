@@ -1,20 +1,26 @@
 #include "ProcessInfo.h"
 
-ProcessInfo::ProcessInfo(int processId, int parentProcessId,  const std::string& executableName,  const std::string& path)
+ProcessInfo::ProcessInfo(DWORD processId, DWORD parentProcessId,  const std::wstring& executableName,  const std::wstring& path)
     : processId_(processId), parentProcessId_(parentProcessId), executableName_(executableName), path_(path) {}
 
-int ProcessInfo::getProcessId()  {
+
+void ProcessInfo::setPath(const std::wstring& path){
+    path_=path;
+}
+
+DWORD ProcessInfo::getProcessId()  {
     return processId_;
 }
 
-int ProcessInfo::getParentProcessId() {
+DWORD ProcessInfo::getParentProcessId() {
     return parentProcessId_;
 }
 
- const std::string& ProcessInfo::getExecutableName()  {
+ const std::wstring& ProcessInfo::getExecutableName()  {
     return executableName_;
 }
 
- const std::string& ProcessInfo::getPath()  {
+ const std::wstring& ProcessInfo::getPath()  {
     return path_;
 }
+

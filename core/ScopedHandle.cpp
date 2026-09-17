@@ -26,6 +26,4 @@ void ScopedHandle::reset() {
         h_ = nullptr;
     }
 }
- ScopedHandle::operator bool() const {
-    return valid();
-}
+ 
