@@ -15,6 +15,8 @@ class ScopedHandle {
         ScopedHandle(const ScopedHandle&) =delete; // non-copyable (regular reference)
         ScopedHandle& operator=(const ScopedHandle&) =delete; //(regular reference)
 
+        
+        PHANDLE GetPHandle() ;//method isnt const but changes nothing, although it returns a pointer to the handle, which can be used to modify the handle UNSAFE
         HANDLE GetHandle() const ;
         bool valid() const ;
         void reset();
