@@ -5,8 +5,7 @@
 
 int main() {
     std::cout << "Hello, World!!!!" << std::endl;
-    ProcessInfo p =ProcessInfo(ProcessInfo(0,0,"MMM","NNN"));
-    std::cout<<p.getExecutableName()<<std::endl;
-
+    int x{};
+    std::cout << x <<std::endl;
     return 0;
 }
