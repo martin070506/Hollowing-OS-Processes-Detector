@@ -1,5 +1,5 @@
 #pragma once
-#include "ScopedHandle.h"
+#include "../core/ScopedHandle.h"
 #include <windows.h>
 #include <string>
 #include <optional>
@@ -14,7 +14,13 @@ class RemoteMemory
         bool read(const void* remoteAddress,void* buffer, size_t size);
 
         template <typename T>
-        std::optional<T> typeRead(const void* remoteAdress);
+        std::optional<T> typeRead(const void* remoteAddress)
+        {
+            T destination{};
+            if (!read(remoteAddress, &destination, sizeof(destination)))
+                return std::nullopt;
+            return destination;
+        };
 
         std::optional<std::vector<std::byte>> readBuffer(const void* remoteAddress, size_t size);
         RemoteMemory(HANDLE _h);

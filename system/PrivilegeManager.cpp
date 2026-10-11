@@ -24,14 +24,14 @@ bool PrivilegeManager::isProcessElevated()
     return elevation.TokenIsElevated != 0;
 }
 
-bool PrivilegeManager::turnOnPrivilege(const std::wstring& privilegeName, PrivilegeManager* selfPtr)
+bool PrivilegeManager::turnOnPrivilege(const std::wstring& privilegeName)
 {
-    return selfPtr->setPrivilege(privilegeName, true);
+    return setPrivilege(privilegeName, true);
 }
 
-bool PrivilegeManager::turnOffPrivilege(const std::wstring& privilegeName, PrivilegeManager* selfPtr)
+bool PrivilegeManager::turnOffPrivilege(const std::wstring& privilegeName)
 {
-    return selfPtr->setPrivilege(privilegeName, false);
+    return setPrivilege(privilegeName, false);
 }
 
 

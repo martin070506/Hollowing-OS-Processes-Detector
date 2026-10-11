@@ -1,9 +1,9 @@
 #include "ProcessEnumerator.h"
-#include "ScopedHandle.h"
+#include "../core/ScopedHandle.h"
 #include "windows.h"
 #include <tlhelp32.h> 
-#include "Logger.h"
-#include "ProcessInfo.h"
+#include "../core/Logger.h"
+#include "../Const/ProcessInfo.h"
 
 std::vector<ProcessInfo> ProcessEnumerator::enumerate() {
     std::vector<ProcessInfo> results;

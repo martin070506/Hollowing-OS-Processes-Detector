@@ -13,17 +13,7 @@ bool RemoteMemory::read(const void* remoteAddress,void* buffer, size_t size)
     return (bytesRead==size);
 }
 
-template <typename T>
-std::optional<T> RemoteMemory::typeRead(const void* remoteAddress)
-{
-    T destination{};
-    bool successRead=read(remoteAddress, &destination, sizeof(destination));
-    if(!successRead)
-    {
-        return std::nullopt;
-    } 
-    return destination;
-}
+
 
 std::optional<std::vector<std::byte>> RemoteMemory::readBuffer(const void* remoteAddress, size_t size)
 {

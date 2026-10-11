@@ -8,19 +8,19 @@ void ProcessInfo::setPath(const std::wstring& path){
     path_=path;
 }
 
-DWORD ProcessInfo::getProcessId()  {
+DWORD ProcessInfo::getProcessId() const  {
     return processId_;
 }
 
-DWORD ProcessInfo::getParentProcessId() {
+DWORD ProcessInfo::getParentProcessId() const {
     return parentProcessId_;
 }
 
- const std::wstring& ProcessInfo::getExecutableName()  {
+const std::wstring& ProcessInfo::getExecutableName() const {
     return executableName_;
 }
 
- const std::wstring& ProcessInfo::getPath()  {
+const std::wstring& ProcessInfo::getPath() const  {
     return path_;
 }
 
