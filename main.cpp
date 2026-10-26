@@ -38,4 +38,5 @@ int main()
                << L"Inaccessible: " << engine.inaccessibleCount() << L"\n";
 
     return 0;
+    std::cout<<"DHJDJ"<<std::endl;
 }
